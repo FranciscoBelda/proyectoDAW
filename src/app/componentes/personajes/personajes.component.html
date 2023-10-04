@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row border-1 shadow mt-2">
+    <h2>Número de personajes: {{infoAPI.info.count}}</h2>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 col-md-4"
+         *ngFor="let char of infoAPI.results">
+      <div class="card">
+        <div class="card-header">
+          <h3>{{char.id}}. {{char.name}}</h3>
+        </div>
+        <img [src]="char.image?char.image:'assets/images/not_found.png'" alt="..."
+             class="card-img">
+        <div class="card-body">
+          <p><strong>Gender: </strong>{{char.gender}}</p>
+          <p><strong>Species: </strong>{{char.species}}</p>
+          <p><strong>Status: </strong>{{char.status}}</p>
+          <p><strong>Origin: </strong>{{char.origin.name}}</p>
+          <p><strong>Episodes: </strong><br>
+            <ul>
+              <li *ngFor="let epi of char.episode">
+                <small class="small text-black-50">{{epi}}</small>
+              </li>
+            </ul>
+
+        </div>
+        <div class="card-footer">
+          <small>Created at: {{char.created}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

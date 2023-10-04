@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-capitalize">
+            {{personaA.nombre}}</div>
+        </div>
+        <div class="card-body">
+          <p><b>Profesión:</b> {{personaA.profesion}}</p>
+        </div>
+        <div class="card-footer">
+          <h3>{{personaA.edad}} años</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class="col-4" *ngFor="let persona of personas">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-capitalize">
+            {{persona.nombre}}</div>
+        </div>
+        <div class="card-body">
+          <p><b>Profesión:</b> {{persona.profesion}}</p>
+        </div>
+        <div class="card-footer">
+          <h3>{{persona.edad}} años</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
